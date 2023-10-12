@@ -1,0 +1,16 @@
+{
+    "operationName": "checkSavedListings",
+    "variables": {
+        "limit": 1000,
+        "listingID": "",
+        "previewHash": null,
+        "require": "sneakpeek,posted",
+        "campaignid": "955ba004cd1e8395",
+        "storeid": "2624460",
+        "storeref": "undefined",
+        "countryid": 1,
+        "languageid": 1,
+        "env": "undefined"
+    },
+    "query": "query checkSavedListings($listingID: String, $previewHash: String, $require: String, $limit: Int, $campaignid: String, $storeid: String, $storeref: String, $countryid: Int, $languageid: Int, $env: String) {\n  listings(listingID: $listingID, previewHash: $previewHash, require: $require, limit: $limit, campaignid: $campaignid, storeid: $storeid, storeref: $storeref, countryid: $countryid, languageid: $languageid, env: $env) {\n    list {\n      ...ListingBase\n      __typename\n    }\n    __typename\n  }\n}\n\nfragment ListingBase on Listing {\n  id\n originalDeal\n  deal\n  title\n  finalPrice\n  saleStartDateString\n  saleEndDateString\n  priceQualifier\n  additionalDealInformation\n  description\n  productDescription\n  customProductDescription\n  departments {\n   name\n }\n }\n"
+}
